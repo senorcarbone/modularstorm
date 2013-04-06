@@ -26,3 +26,5 @@ Indication:
 STRM_INIT :: {TopologyContext} 
 STRM_EXECUTE :: {Tuple}
 ```
+
+A short demo on how to use the current api for assembling your own components ontop of *KompicsBolt* can be found [here](https://github.com/senorcarbone/modularstorm/blob/master/src/test/java/se/sics/kompics/storm/topologies/TestTopology.java)
