@@ -6,9 +6,9 @@ It offers a clean modular actor-like api to Storm that seems to be missing in th
 For implementations that involve multi-threading and different component stacks and dependencies on top of the 
 storm processing model modularstorm can be leveraged for removing most of such complexity.
 Scheduling of component workers is also handled by the Kompics scheduler and allows for efficient usage of multi-core machines.
-Flow-control events might be added soon since accumulated execute events can potentially trigger memory issues if processing rate is slow.
+Flow-control events might be added soon since accumulated execute events can potentially trigger memory issues if the processing rate is too slow.
 
-It is first adviced to go through the Kompics [documentation](http://kompics.sics.se/trac/attachment/wiki/WikiStart/kompics-tutorial.pdf) to see how to build some basic components.
+It is first advised to go through the Kompics [documentation](http://kompics.sics.se/trac/attachment/wiki/WikiStart/kompics-tutorial.pdf) to see how to build some basic components.
 On this implementation one Kompics scheduler is being instantiated per Storm worker (JVM process) and further component binding can be done manually 
 upon a task 'prepared' state.
 
@@ -27,4 +27,4 @@ STRM_INIT :: {TopologyContext}
 STRM_EXECUTE :: {Tuple}
 ```
 
-A short demo on how to use the current api for assembling your own components ontop of *KompicsBolt* can be found [here](https://github.com/senorcarbone/modularstorm/blob/master/src/test/java/se/sics/kompics/storm/topologies/TestTopology.java)
+A short demo on how to use the current api for assembling your own components on top of *KompicsBolt* can be found [here](https://github.com/senorcarbone/modularstorm/blob/master/src/test/java/se/sics/kompics/storm/topologies/TestTopology.java)
