@@ -1,4 +1,4 @@
-package se.sics.kompics.storm.se.sics.kompics.storm.modules;
+package se.sics.kompics.storm.modules;
 
 import backtype.storm.spout.SpoutOutputCollector;
 import backtype.storm.task.TopologyContext;

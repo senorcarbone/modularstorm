@@ -1,4 +1,4 @@
-package se.sics.kompics.storm.se.sics.kompics.storm.modules;
+package se.sics.kompics.storm.modules;
 
 import com.google.common.collect.Lists;
 import se.sics.kompics.ComponentDefinition;

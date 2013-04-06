@@ -1,4 +1,4 @@
-package se.sics.kompics.storm.se.sics.kompics.storm.topologies;
+package se.sics.kompics.storm.topologies;
 
 
 import backtype.storm.Config;
@@ -7,9 +7,9 @@ import backtype.storm.topology.TopologyBuilder;
 import backtype.storm.utils.Utils;
 import org.junit.Test;
 import se.sics.kompics.storm.bolt.KompicsBolt;
-import se.sics.kompics.storm.se.sics.kompics.storm.modules.PrintSetup;
-import se.sics.kompics.storm.se.sics.kompics.storm.modules.ReemmitSetup;
-import se.sics.kompics.storm.se.sics.kompics.storm.modules.TestCounterSpout;
+import se.sics.kompics.storm.modules.PrintSetup;
+import se.sics.kompics.storm.modules.ReemmitSetup;
+import se.sics.kompics.storm.modules.TestCounterSpout;
 
 public class TestTopology {
 
