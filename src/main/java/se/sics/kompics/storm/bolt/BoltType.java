@@ -1,7 +1,7 @@
 package se.sics.kompics.storm.bolt;
 
 import se.sics.kompics.PortType;
-import se.sics.kompics.storm.evt.*;
+import se.sics.kompics.storm.bolt.evt.*;
 
 /**
  * @author carbone

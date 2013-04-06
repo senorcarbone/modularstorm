@@ -1,4 +1,4 @@
-package se.sics.kompics.storm.evt;
+package se.sics.kompics.storm.bolt.evt;
 
 import backtype.storm.task.TopologyContext;
 import se.sics.kompics.Init;

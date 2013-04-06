@@ -6,8 +6,8 @@ import se.sics.kompics.Handler;
 import se.sics.kompics.Negative;
 import se.sics.kompics.Positive;
 import se.sics.kompics.storm.bolt.BoltType;
-import se.sics.kompics.storm.evt.STRM_EXECUTE;
-import se.sics.kompics.storm.evt.STRM_INIT;
+import se.sics.kompics.storm.bolt.evt.STRM_EXECUTE;
+import se.sics.kompics.storm.bolt.evt.STRM_INIT;
 
 public class FwModule extends ComponentDefinition {
 

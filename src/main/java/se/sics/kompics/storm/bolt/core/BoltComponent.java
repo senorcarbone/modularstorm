@@ -1,10 +1,11 @@
-package se.sics.kompics.storm.bolt;
+package se.sics.kompics.storm.bolt.core;
 
 import backtype.storm.tuple.Tuple;
 import se.sics.kompics.ComponentDefinition;
 import se.sics.kompics.Handler;
 import se.sics.kompics.Negative;
-import se.sics.kompics.storm.evt.*;
+import se.sics.kompics.storm.bolt.BoltType;
+import se.sics.kompics.storm.bolt.evt.*;
 
 /**
  * @author carbone

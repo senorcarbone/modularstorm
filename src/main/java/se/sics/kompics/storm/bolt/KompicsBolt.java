@@ -8,7 +8,11 @@ import backtype.storm.tuple.Tuple;
 import se.sics.kompics.Component;
 import se.sics.kompics.Fault;
 import se.sics.kompics.Handler;
-import se.sics.kompics.storm.evt.STRM_BOLT_INIT;
+import se.sics.kompics.storm.bolt.core.BoltBehavior;
+import se.sics.kompics.storm.bolt.core.BoltComponent;
+import se.sics.kompics.storm.bolt.core.BoltComponentBehavior;
+import se.sics.kompics.storm.bolt.core.BoltProxy;
+import se.sics.kompics.storm.bolt.evt.STRM_BOLT_INIT;
 
 import java.util.List;
 import java.util.Map;

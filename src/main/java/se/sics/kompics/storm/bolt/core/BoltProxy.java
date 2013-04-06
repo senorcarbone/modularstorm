@@ -1,7 +1,8 @@
-package se.sics.kompics.storm.bolt;
+package se.sics.kompics.storm.bolt.core;
 
 
 import backtype.storm.tuple.Tuple;
+import se.sics.kompics.storm.bolt.KompicsBolt;
 
 import java.util.ArrayList;
 import java.util.List;
