@@ -17,8 +17,8 @@ public class TestTopology {
     public void testLocally() {
         TopologyBuilder builder = new TopologyBuilder();
         builder.setSpout("counter", new TestCounterSpout(10, "num"), 1);
-        builder.setBolt("reemmit", new KompicsBolt(new ReemmitSetup()), 1).globalGrouping("counter");
-        builder.setBolt("printer", new KompicsBolt(new PrintSetup()), 1).globalGrouping("reemmit");
+        builder.setBolt("reemmit", new KompicsBolt(new ReemmitSetup()), 2).allGrouping("counter");
+        builder.setBolt("printer", new KompicsBolt(new PrintSetup()), 1).allGrouping("reemmit");
         Config conf = new Config();
         conf.setDebug(true);
         LocalCluster cluster = new LocalCluster();

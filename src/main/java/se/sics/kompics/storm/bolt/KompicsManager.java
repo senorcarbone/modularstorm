@@ -11,12 +11,9 @@ import se.sics.kompics.*;
  */
 public class KompicsManager extends ComponentDefinition {
 
-    private final static KompicsManager instance = new KompicsManager(0);
+    private final static KompicsManager instance = new KompicsManager();
 
-    public KompicsManager(){
-    }
-
-    private KompicsManager(int foo) {
+    public KompicsManager() {
         if (Kompics.getScheduler() == null) {
             Kompics.createAndStart(KompicsManager.class, Runtime.getRuntime().availableProcessors());
         }
