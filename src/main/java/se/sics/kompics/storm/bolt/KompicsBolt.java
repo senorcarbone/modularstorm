@@ -22,13 +22,17 @@ public class KompicsBolt implements IRichBolt, BoltBehavior {
     private transient OutputCollector outputCollector;
     private ModuleSetup customInitiator;
 
-    public KompicsBolt(ModuleSetup moduleSetup) {
+    private KompicsBolt(ModuleSetup moduleSetup) {
         this.customInitiator = moduleSetup;
     }
 
     private void processFailure(Fault fault) {
         customInitiator.cleanup(KompicsManager.getInstance());
         outputCollector.reportError(new Throwable(fault.getFault()));
+    }
+
+    public static KompicsBolt build(ModuleSetup setup) {
+        return new KompicsBolt(setup);
     }
 
     @Override
