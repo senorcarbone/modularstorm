@@ -24,19 +24,23 @@ public class KompicsBolt implements IRichBolt, BoltBehavior {
 
     private transient BoltComponentBehavior boltProxy;
     private transient OutputCollector outputCollector;
-    private ModuleSetup customInitiator;
+    private ModuleSetup moduleSetup;
 
     private KompicsBolt(ModuleSetup moduleSetup) {
-        this.customInitiator = moduleSetup;
+        this.moduleSetup = moduleSetup;
     }
 
     private void processFailure(Fault fault) {
-        customInitiator.cleanup(KompicsManager.getInstance());
+        moduleSetup.cleanup(KompicsManager.getInstance());
         outputCollector.reportError(new Throwable(fault.getFault()));
     }
 
     public static KompicsBolt build(ModuleSetup setup) {
         return new KompicsBolt(setup);
+    }
+
+    public ModuleSetup getModuleSetup() {
+        return moduleSetup;
     }
 
     @Override
@@ -47,12 +51,12 @@ public class KompicsBolt implements IRichBolt, BoltBehavior {
 
     @Override
     public void cleanup() {
-        customInitiator.cleanup(KompicsManager.getInstance());
+        moduleSetup.cleanup(KompicsManager.getInstance());
     }
 
     @Override
     public void declareOutputFields(OutputFieldsDeclarer outputFieldsDeclarer) {
-        customInitiator.declareOutput(outputFieldsDeclarer);
+        moduleSetup.declareOutput(outputFieldsDeclarer);
     }
 
     private void setupModules(TopologyContext topologyContext) {
@@ -65,7 +69,7 @@ public class KompicsBolt implements IRichBolt, BoltBehavior {
         KompicsManager moduleManager = KompicsManager.getInstance();
         Component boltComponent = moduleManager._create(BoltComponent.class);
         moduleManager._subscribe(failHandler, boltComponent.control());
-        customInitiator.setup(moduleManager, boltComponent, failHandler);
+        moduleSetup.setup(moduleManager, boltComponent, failHandler);
         BoltBehavior proxy = new BoltProxy(this);
         boltProxy = (BoltComponentBehavior) proxy;
         moduleManager._trigger(new STRM_BOLT_INIT(topologyContext, proxy), boltComponent.control());

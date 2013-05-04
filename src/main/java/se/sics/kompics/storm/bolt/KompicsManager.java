@@ -14,7 +14,7 @@ public class KompicsManager extends ComponentDefinition {
     private final static KompicsManager instance = new KompicsManager();
 
     public KompicsManager() {
-        if (Kompics.getScheduler() == null) {
+        if (Kompics.isOn()) {
             Kompics.createAndStart(KompicsManager.class, Runtime.getRuntime().availableProcessors());
         }
     }
