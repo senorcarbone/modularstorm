@@ -34,6 +34,12 @@ public class STRM_EMIT extends Event {
         this.tuple = values;
     }
 
+    public STRM_EMIT(List<Object> values) {
+        this.streamID = null;
+        this.anchors = null;
+        this.tuple = values;
+    }
+
     public String getStreamID() {
         return streamID;
     }

@@ -88,7 +88,9 @@ public class KompicsBolt implements IRichBolt, BoltBehavior {
 
     @Override
     public void emit(String streamID, List<Tuple> anchors, List<Object> tuple) {
-        if (streamID == null)
+        if (streamID == null && anchors == null) {
+            outputCollector.emit(tuple);
+        } else if (streamID == null)
             outputCollector.emit(anchors, tuple);
         else
             outputCollector.emit(streamID, anchors, tuple);
